@@ -135,7 +135,7 @@ if (isset($_POST['update'])) {
                                             <div class="form-group col-md-6">
                                                     <label for="sex">Sex</label>
                                                     <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="sex"  data-parsley-trigger="keyup" required>
-                                                        <option selected>Choose...</option>
+                                                        <option value="">Choose...</option>
                                                         <option value="M" <?= ($sex == 'M')? "selected" : "" ?>>Male</option>
                                                         <option value="F" <?= ($sex == 'F')? "selected" : "" ?>>Female</option>
                                                     </select>
@@ -152,7 +152,7 @@ if (isset($_POST['update'])) {
                                         <div class="form-group">
                                             <label class="small mb-1" for="prison">Prison</label>
                                             <select class="form-control" id="prison" name="prison" data-parsley-required="true">
-                                                <option>Choose...</option>
+                                                <option value="">Choose...</option>
                                                 <option value="Nsawam Medium Security Prisons" <?= ($prison_name == 'Nsawam Medium Security Prisons') ? 'selected' : "" ?>> Nsawam Medium Security Prisons</option>
                                                 <option value="Ankaful Prison" <?= ($prison_name == 'Ankaful Prison') ? 'selected' : "" ?>>Ankaful Prison</option>
                                                 <option value="Kete Krachi Prisons" <?= ($prison_name == 'Kete Krachi Prisons') ? 'selected' : "" ?>> Kete Krachi Prisons</option>
@@ -162,7 +162,7 @@ if (isset($_POST['update'])) {
                                                 <option value="Borstal Institute for Juveniles" <?= ($prison_name == 'Borstal Institute for Juveniles') ? 'selected' : "" ?>>Borstal Institute for Juveniles</option>
                                             </select>
                                         </div>
-                                        <button type="submit" name="update" class="btn btn-primary btn-lg btn-block">Update Info</button>
+                                        <button type="submit" name="update" class="btn btn-primary btn-lg btn-block">Update Record</button>
                                     </form>
                                 </div>
                             </div>

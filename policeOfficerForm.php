@@ -68,7 +68,7 @@
                                             <div class="form-group col-md-6">
                                                 <label for="Ranks">Ranks</label>
                                                 <select class="custom-select mr-sm-2" id="rank" id="ranks"  data-parsley-trigger="keyup"  data-parsley-required="true" name="ranks">
-                                                    <option selected>Choose...</option>
+                                                    <option value="">Choose...</option>
                                                     <option value="Sergeant">Sergeant</option>
                                                     <option value="Lance corporal">Lance corporal</option>
                                                     <option value="Sergeant">Sergeant</option>
@@ -87,11 +87,8 @@
                                         </div>
 <!--     
                                         <div class="form-group mt-4 mb-0"><a class="btn btn-primary btn-block" href="login.html">Save Info</a></div> -->
-                                        <button type="submit" name="submit" class="btn btn-primary btn-lg btn-block">Save Info</button>
+                                        <button type="submit" name="submit" class="btn btn-primary btn-lg btn-block">Save Record</button>
                                     </form>
-                                </div>
-                                <div class="card-footer text-center">
-                                    <div class="small"><a href="login.html">Have an account? Go to login</a></div>
                                 </div>
                             </div>
                         </div>

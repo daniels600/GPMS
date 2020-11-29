@@ -69,7 +69,7 @@
                                             <div class="form-group col-md-6">
                                                     <label for="sex">Sex</label>
                                                     <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="sex"  data-parsley-trigger="keyup" required>
-                                                        <option selected>Choose...</option>
+                                                        <option value="">Choose...</option>
                                                         <option value="Male">Male</option>
                                                         <option value="Female">Female</option>
                                                     </select>
@@ -82,7 +82,7 @@
                                         <div class="form-group">
                                             <label class="small mb-1" for="prison">Prison</label>
                                             <select class="form-control" id="prison" name="prison" data-parsley-required="true" >
-                                                <option>Choose...</option>
+                                                <option value="">Choose...</option>
                                                 <option value="Nsawam Medium Security"> Nsawam Medium Security</option>
                                                 <option value="Ankaful">Ankaful</option>
                                                 <option value="Kete Krachi"> Kete Krachi</option>
@@ -92,11 +92,8 @@
                                                 <option value="Borstal Juveniles">Borstal Juveniles</option>
                                             </select>
                                         </div>
-                                        <button type="submit" name="submit" class="btn btn-primary btn-lg btn-block">Save Info</button>
+                                        <button type="submit" name="submit" class="btn btn-primary btn-lg btn-block">Save Record</button>
                                     </form>
-                                </div>
-                                <div class="card-footer text-center">
-                                    <div class="small"><a href="login.html">Have an account? Go to login</a></div>
                                 </div>
                             </div>
                         </div>
@@ -108,7 +105,7 @@
             <footer class="py-4 bg-light mt-auto">
                 <div class="container-fluid">
                     <div class="d-flex align-items-center justify-content-between small">
-                        <div class="text-muted">Copyright &copy; Your Website 2020</div>
+                        <div class="text-muted">Copyright &copy; Eugene Daniels 2020</div>
                         <div>
                             <a href="#">Privacy Policy</a>
                             &middot;
@@ -130,7 +127,7 @@
             Swal.fire({
                 icon: 'success',
                 title: 'Visitor information saved!',
-                text: 'Kindly click to go to the Dashboard',
+                text: 'Kindly click to go to the Visitor\'s page',
                 allowOutsideClick: false,
                 allowEscapeKey: false,
                 footer: '<a href=visitor.php>Click here!</a>',  

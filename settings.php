@@ -69,7 +69,7 @@
             $('#light-theme').click(function(){
                 if($(this).prop("checked") == true){
                     console.log("lIght check was done");
-                    window.location.href= './layout-sidenav-light.html';
+                    window.location.href= './light-Dashboard.php';
                 } else {
                     
                 }

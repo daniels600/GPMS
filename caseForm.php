@@ -56,11 +56,11 @@
                                         <div class="form-group">
                                             <label for="CategoryOfOffence">Category of Offence</label>
                                             <select class="form-control" id="catOffence" name="CatOffence"required>
-                                                <option>Choose ...</option>
-                                                <option>Capital</option>
-                                                <option>First</option>
-                                                <option>Second</option>
-                                                <option>Misdemeanour</option>
+                                                <option value="">Choose ...</option>
+                                                <option value="Capital">Capital</option>
+                                                <option value="First">First Degree</option>
+                                                <option value="Second">Second Degree</option>
+                                                <option value="Misdemeanour">Misdemeanour</option>
                                             </select>
                                         </div>
                                         <div class="form-group">
@@ -89,7 +89,7 @@
                                                 <label class="small mb-1" for="sentenceLength">Sentence Length</label>
                                                 <input class="form-control py-4" id="sentenceLength" type="number" placeholder="Enter Duration of sentence" data-parsley-required="true" data-parsley-error-message="Please enter a figure only" name="sentenceLength"/>
                                         </div>
-                                        <button type="submit" name="submit" class="btn btn-primary btn-lg btn-block">Save Info</button>
+                                        <button type="submit" name="submit" class="btn btn-primary btn-lg btn-block">Save Record</button>
                                     </form>
                                 </div>
                             </div>

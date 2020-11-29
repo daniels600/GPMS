@@ -92,20 +92,20 @@ if(isset($_GET['id'])){
                                             <div class="form-group col-md-6">
                                                 <label class="small mb-1" for="prison">Prison</label>
                                                 <select  class="custom-select mr-sm-2" id="prison" name="prison" data-parsley-required="true" readonly>
-                                                    <option>Choose...</option>
-                                                    <option value="Nsawam Medium Security Prisons" <?= ($prison == 'Nsawam Medium Security Prisons')? "selected" : "" ?> > Nsawam Medium Security Prisons</option>
-                                                    <option value="Ankaful Prison" <?= ($prison == 'Ankaful Prison')? "selected" : "" ?> >Ankaful Prison</option>
-                                                    <option value="Kete Krachi Prisons" <?= ($prison == 'Kete Krachi Prisons')? "selected" : "" ?> > Kete Krachi Prisons</option>
-                                                    <option value="Akuse Prison" <?= ($prison == 'Akuse Prison')? "selected" : "" ?> >Akuse Prison</option>
-                                                    <option value="Tamale Prison" <?= ($prison == 'Tamale Prison')? "selected" : "" ?> >Tamale Prison</option>
-                                                    <option value="Sekondi Female Prison" <?= ($prison == 'Sekondi Female Prison')? "selected" : "" ?> >Sekondi Female Prison</option>
-                                                    <option value="Borstal Institute for Juveniles" <?= ($prison == 'Borstal Institute for Juveniles')? "selected" : "" ?> >Borstal Institute for Juveniles</option>
+                                                    <option value="">Choose...</option>
+                                                    <option value="Nsawam Medium Security" <?= ($prison == 'Nsawam Medium Security')? "selected" : "" ?> > Nsawam Medium Security Prisons</option>
+                                                    <option value="Ankaful" <?= ($prison == 'Ankaful')? "selected" : "" ?> >Ankaful Prison</option>
+                                                    <option value="Kete Krachi" <?= ($prison == 'Kete Krachi')? "selected" : "" ?> > Kete Krachi Prisons</option>
+                                                    <option value="Akuse" <?= ($prison == 'Akuse')? "selected" : "" ?> >Akuse Prison</option>
+                                                    <option value="Tamale" <?= ($prison == 'Tamale')? "selected" : "" ?> >Tamale Prison</option>
+                                                    <option value="Sekondi Female" <?= ($prison == 'Sekondi Female')? "selected" : "" ?> >Sekondi Female Prison</option>
+                                                    <option value="Borstal Juveniles" <?= ($prison == 'Borstal Juveniles')? "selected" : "" ?> >Borstal Institute for Juveniles</option>
                                                 </select>
                                             </div>
                                             <div class="form-group col-md-6">
                                                 <label class="small mb-1" for="dept_name">Department name</label>
                                                 <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" id="dept_id" name='dept_name' data-parsley-trigger="keyup" required readonly>
-                                                    <option selected>Choose...</option>
+                                                    <option value="">Choose...</option>
                                                     <option value="Finance and Administration" <?= ($Dept == 'Finance and Administration')? "selected" : "" ?>>Finance and Administration</option>
                                                     <option value="Human Resource" <?= ($Dept == 'Human Resource')? "selected" : "" ?>>Human Resource</option>
                                                     <option value="Agricultural" <?= ($Dept == 'Agricultural')? "selected" : "" ?>>Agricultural</option>
@@ -128,7 +128,7 @@ if(isset($_GET['id'])){
                                                 <div class="form-group">
                                                     <label class="small mb-1" for="edu">Level of education</label>
                                                     <select class="custom-select mr-sm-2" id="edu" name="edu" data-parsley-trigger="keyup" required readonly>
-                                                        <option selected>Choose...</option>
+                                                        <option value="">Choose...</option>
                                                         <option value="Primary School" <?= ($edu == 'Primary School')? "selected" : "" ?>>Primary School</option>
                                                         <option value="Junior High School" <?= ($edu == 'Junior High School')? "selected" : "" ?>>Junior High School</option>
                                                         <option value="Senior Secondary School" <?= ($edu == 'Senior Secondary School')? "selected" : "" ?>>Senior Secondary School</option>
@@ -146,15 +146,15 @@ if(isset($_GET['id'])){
                                             <div class="form-group col-md-6">
                                                 <label for="sex">Sex</label>
                                                 <select class="custom-select mr-sm-2" id="sex" name="sex"  data-parsley-trigger="keyup" required readonly>
-                                                    <option selected>Choose...</option>
-                                                    <option value="M" <?= ($sex == 'M')? "selected" : "" ?>>Male</option>
-                                                    <option value="F" <?= ($sex == 'F')? "selected" : "" ?>>Female</option>
+                                                    <option value="">Choose...</option>
+                                                    <option value="Male" <?= ($sex == 'Male')? "selected" : "" ?>>Male</option>
+                                                    <option value="Female" <?= ($sex == 'Female')? "selected" : "" ?>>Female</option>
                                                 </select>
                                             </div>
                                             <div class="form-group col-md-6">
                                                 <label for="marital_status">Marital Status</label>
                                                 <select class="custom-select mr-sm-2" name="marital_status" data-parsley-trigger="keyup" required readonly>
-                                                    <option selected>Choose...</option>
+                                                    <option value="">Choose...</option>
                                                     <option value="Single" <?= ($marital_status == 'Single')? "selected" : "" ?>>Single</option>
                                                     <option value="Married" <?= ($marital_status == 'Married')? "selected" : "" ?>>Married</option>
                                                 </select>

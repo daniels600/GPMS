@@ -51,7 +51,7 @@
                                         <div class="form-group">
                                             <label class="small mb-1" for="prison">Prison</label>
                                             <select class="form-control" id="prison" name="prison" data-parsley-required="true" >
-                                                <option>Choose...</option>
+                                                <option value="">Choose...</option>
                                                 <option value="Nsawam Medium Security"> Nsawam Medium Security</option>
                                                 <option value="Ankaful">Ankaful</option>
                                                 <option value="Kete Krachi"> Kete Krachi</option>
@@ -83,7 +83,7 @@
                                             <div class="form-group col-md-6">
                                                 <label for="sex">Sex</label>
                                                 <select class="custom-select mr-sm-2" id="sex" data-parsley-trigger="keyup" name='gender' required>
-                                                    <option selected>Choose...</option>
+                                                    <option value="">Choose...</option>
                                                     <option value="Male">Male</option>
                                                     <option value="Female">Female</option>
                                                 </select>
@@ -91,7 +91,7 @@
                                             <div class="form-group col-md-6">
                                                 <label for="marital_status">Marital Status</label>
                                                 <select class="custom-select mr-sm-2" id="marital_status" data-parsley-trigger="keyup" name='marital_status' required>
-                                                    <option selected>Choose...</option>
+                                                    <option value="">Choose...</option>
                                                     <option value="Single">Single</option>
                                                     <option value="Married">Married</option>
                                                 </select>
@@ -102,7 +102,7 @@
                                                 <div class="form-group">
                                                     <label class="small mb-1" for="inmateStatus">Inmate Status</label>
                                                     <select class="custom-select mr-sm-2" id="inmateStatus" data-parsley-trigger="keyup" name="inmateStatus" required>
-                                                        <option selected>Choose...</option>
+                                                        <option value="">Choose...</option>
                                                         <option value="Remand">Remand</option>
                                                         <option value="Convict">Convict</option>
                                                     </select>
@@ -120,7 +120,7 @@
                                             <div class="form-group col-md-6">
                                                 <label for="Complexion">Complexion</label>
                                                 <select class="custom-select mr-sm-2" id="complexion" name="complexion" data-parsley-trigger="keyup" required>
-                                                    <option selected>Choose...</option>
+                                                    <option value="">Choose...</option>
                                                     <option value="Fair">Fair</option>
                                                     <option value="Dark">Dark</option>
                                                 </select>
@@ -188,7 +188,7 @@
                                         </div>
                                         <?php if(isset($_GET['error'])){if($_GET['error'] == 'wrongImage') {echo "Upload a *jpeg  *gif *png *jpg";}}?>
                                         <br />
-                                        <button type="submit" name="submit" class="btn btn-primary btn-lg btn-block" required>Save Info</button>
+                                        <button type="submit" name="submit" class="btn btn-primary btn-lg btn-block" required>Save Record</button>
                                     </form>
                                 </div>
                             </div>

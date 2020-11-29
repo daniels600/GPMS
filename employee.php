@@ -15,6 +15,13 @@ $sql = "SELECT
             FROM
             Employees";
         
+
+
+$males = "SELECT * FROM Employees WHERE sex='Male'";
+$females = "SELECT * FROM Employees WHERE sex='Female'";
+
+$maleResult = mysqli_query($conn,$males);
+
 $result = mysqli_query($conn, $sql);
 
 
@@ -77,12 +84,7 @@ $result = mysqli_query($conn, $sql);
                             <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                             Dashboard
                         </a>
-                        <!-- <div class="sb-sidenav-menu-heading">Interface</div>
-                        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
-                            <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                            Layouts
-                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                        </a> -->
+                        
                         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
                             <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
                             Administration
@@ -90,29 +92,9 @@ $result = mysqli_query($conn, $sql);
                         </a>
                         <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
-                            <a class="nav-link" href="prisoner.php">Inmates</a>
-                            <a class="nav-link" href="employee.php">Employees</a>
-                            <a class="nav-link" href="visitor.php">Visitors</a>
-                                    <!-- <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div> -->
-                                <!-- </a> -->
-                                <!-- <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-parent="#sidenavAccordionPages">
-                                    <nav class="sb-sidenav-menu-nested nav">
-                                        <a class="nav-link" href="prisoner.php">Inmates</a>
-                                        <a class="nav-link" href="employee.php">Employees</a>
-                                        <a class="nav-link" href="visitor.php">Visitors</a>
-                                    </nav>
-                                </div> -->
-                                <!-- <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#pagesCollapseError" aria-expanded="false" aria-controls="pagesCollapseError">
-                                    Error
-                                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                                </a>
-                                <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne" data-parent="#sidenavAccordionPages">
-                                    <nav class="sb-sidenav-menu-nested nav">
-                                        <a class="nav-link" href="401.html">401 Page</a>
-                                        <a class="nav-link" href="404.html">404 Page</a>
-                                        <a class="nav-link" href="500.html">500 Page</a>
-                                    </nav>
-                                </div> -->
+                                <a class="nav-link" href="prisoner.php">Inmates</a>
+                                <a class="nav-link" href="employee.php">Employees</a>
+                                <a class="nav-link" href="visitor.php">Visitors</a>
                             </nav>
                         </div>
                     </div>
@@ -129,46 +111,8 @@ $result = mysqli_query($conn, $sql);
                     <ol class="breadcrumb mb-4">
                         <li class="breadcrumb-item active">Dashboard</li>
                     </ol>
-                    <div class="row">
-                        <div class="col-xl-3 col-md-6">
-                            <div class="card bg-primary text-white mb-4">
-                                <div class="card-body">Primary Card</div>
-                                <div class="card-footer d-flex align-items-center justify-content-between">
-                                    <a class="small text-white stretched-link" href="#">View Details</a>
-                                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-md-6">
-                            <div class="card bg-warning text-white mb-4">
-                                <div class="card-body">Warning Card</div>
-                                <div class="card-footer d-flex align-items-center justify-content-between">
-                                    <a class="small text-white stretched-link" href="#">View Details</a>
-                                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-md-6">
-                            <div class="card bg-success text-white mb-4">
-                                <div class="card-body">Success Card</div>
-                                <div class="card-footer d-flex align-items-center justify-content-between">
-                                    <a class="small text-white stretched-link" href="#">View Details</a>
-                                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-md-6">
-                            <div class="card bg-danger text-white mb-4">
-                                <div class="card-body">Danger Card</div>
-                                <div class="card-footer d-flex align-items-center justify-content-between">
-                                    <a class="small text-white stretched-link" href="#">View Details</a>
-                                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xl-6">
+                    <!-- <div class="row"> -->
+                        <!-- <div class="col-xl-6">
                             <div class="card mb-4">
                                 <div class="card-header">
                                     <i class="fas fa-chart-area mr-1"></i>
@@ -176,17 +120,17 @@ $result = mysqli_query($conn, $sql);
                                 </div>
                                 <div class="card-body"><canvas id="myAreaChart" width="100%" height="40"></canvas></div>
                             </div>
-                        </div>
-                        <div class="col-xl-6">
+                        </div> -->
+                        <!-- <div class="col-xl-6"> -->
                             <div class="card mb-4">
                                 <div class="card-header">
                                     <i class="fas fa-chart-bar mr-1"></i>
-                                    Bar Chart Example
+                                    Employee's Gender
                                 </div>
                                 <div class="card-body"><canvas id="myBarChart" width="100%" height="40"></canvas></div>
                             </div>
-                        </div>
-                    </div>
+                        <!-- </div> -->
+                    <!-- </div> -->
                     <div class="card mb-4">
                         <div class="card-header">
                             <i class="fas fa-table mr-1"></i>
@@ -278,6 +222,61 @@ $result = mysqli_query($conn, $sql);
     
 
     <script>
+
+    $(document).ready(function () {
+            showGraph1();
+        });
+
+
+        function showGraph1()
+        {
+            {
+                $.post("employee_data.php",
+                function (data)
+                {
+                    console.log(data);
+                     var sex = []; 
+                    var count = [];
+
+                    for (var i in data) {
+                        sex.push(data[i].sex);
+                        count.push(data[i].count);
+                    }
+
+                    var chartdata = {
+                        labels: sex,
+                        datasets: [
+                            {
+                                label: 'Employees Gender',
+                                backgroundColor: '#49e2ff',
+                                borderColor: '#46d5f1',
+                                hoverBackgroundColor: '#CCCCCC',
+                                hoverBorderColor: '#666666',
+                                data: count
+                            }
+                        ]
+                    };
+
+                    var graphTarget = $("#myBarChart");
+
+                    var barGraph = new Chart(graphTarget, {
+                        type: 'bar',
+                        data: chartdata,
+                        options: {
+                            scales: {
+                                yAxes: [{
+                                    ticks: {
+                                        beginAtZero: true,
+                                        stepSize: 1
+                                    }
+                                }]
+                            }
+                        }
+                    });
+                });
+            }
+        }
+
     $(".btn-danger").on('click', function(e){
             e.preventDefault();
             const href = $(this).attr('href')

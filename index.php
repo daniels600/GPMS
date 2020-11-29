@@ -5,7 +5,7 @@
 
 if(isset($_GET['login'])){
     if($_GET['login'] = 'success'){
-        $msg = "Login Successfully";
+        $msg = "Login Successful";
     }
 }
 

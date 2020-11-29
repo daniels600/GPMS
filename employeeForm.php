@@ -53,7 +53,7 @@
                                             <div class="form-group col-md-6">
                                                 <label class="small mb-1" for="prison">Prison</label>
                                                 <select class="form-control" id="prison" name="prison" data-parsley-required="true" >
-                                                <option>Choose...</option>
+                                                <option value="">Choose...</option>
                                                 <option value="Nsawam Medium Security"> Nsawam Medium Security</option>
                                                 <option value="Ankaful">Ankaful</option>
                                                 <option value="Kete Krachi"> Kete Krachi</option>
@@ -66,7 +66,7 @@
                                             <div class="form-group col-md-6">
                                                 <label class="small mb-1" for="dept_name">Department name</label>
                                                 <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" id="dept_id" name='dept_name' data-parsley-trigger="keyup" required>
-                                                    <option selected>Choose...</option>
+                                                    <option value="">Choose...</option>
                                                     <option value="Finance and Administration">Finance and Administration</option>
                                                     <option value="Human Resource">Human Resource</option>
                                                     <option value="Agricultural">Agricultural</option>
@@ -89,7 +89,7 @@
                                                 <div class="form-group">
                                                     <label class="small mb-1" for="edu">Level of education</label>
                                                     <select class="custom-select mr-sm-2" id="edu" name="edu" data-parsley-trigger="keyup" required>
-                                                        <option selected>Choose...</option>
+                                                        <option value="">Choose...</option>
                                                         <option value="Primary School">Primary School</option>
                                                         <option value="Junior High School">Junior High School</option>
                                                         <option value="Senior Secondary School">Senior Secondary School</option>
@@ -107,7 +107,7 @@
                                             <div class="form-group col-md-6">
                                                 <label for="sex">Sex</label>
                                                 <select class="custom-select mr-sm-2" id="sex" name="sex"  data-parsley-trigger="keyup" required>
-                                                    <option selected>Choose...</option>
+                                                    <option value="">Choose...</option>
                                                     <option value="Male">Male</option>
                                                     <option value="Female">Female</option>
                                                 </select>
@@ -115,7 +115,7 @@
                                             <div class="form-group col-md-6">
                                                 <label for="marital_status">Marital Status</label>
                                                 <select class="custom-select mr-sm-2" name="marital_status" data-parsley-trigger="keyup" required>
-                                                    <option selected>Choose...</option>
+                                                    <option value="">Choose...</option>
                                                     <option value="Single">Single</option>
                                                     <option value="Married">Married</option>
                                                 </select>
@@ -125,7 +125,7 @@
                                         <div class="form-row">
                                             <div class="form-group col-md-6">
                                                 <label for="inputSSN">SSN (XXX-XX-XXXX)</label>
-                                                <input type="text" class="form-control" name="ssn" placeholder="Enter SSN" data-parsley-trigger="keyup" data-parsley-pattern='^(\d{3}-?\d{2}-?\d{4}|XXX-XX-XXXX)$'/>
+                                                <input type="text" class="form-control" name="ssn" placeholder="Enter SSN" data-parsley-trigger="keyup" data-parsley-pattern='^(\d{3}-?\d{2}-?\d{4}|XXX-XX-XXXX)$' required/>
                                             </div>
                                             <div class="form-group col-md-6">
                                                 <label for="telephone">Telephone</label>
@@ -204,7 +204,7 @@
         if(flashdata) {
             Swal.fire({
                 icon: 'success',
-                title: 'Congratulation',
+                title: 'Record Saved!',
                 text: 'New employee details saved successfully!',
                 footer: '<a href=employee.php>Click here!</a>',  
                 type: "success" 

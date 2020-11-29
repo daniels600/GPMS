@@ -155,7 +155,7 @@ if (isset($_POST['update'])) {
                                         <div class="form-group">
                                             <label class="small mb-1" for="prison">Prison</label>
                                             <select class="form-control" id="prison" name="prison" data-parsley-required="true">
-                                                <option>Choose...</option>
+                                                <option value="">Choose...</option>
                                                 <option value="Nsawam Medium Security" <?= ($prison_name == 'Nsawam Medium Security') ? 'selected' : "" ?>> Nsawam Medium Security Prisons</option>
                                                 <option value="Ankaful" <?= ($prison_name == 'Ankaful') ? 'selected' : "" ?>>Ankaful Prison</option>
                                                 <option value="Kete Krachi" <?= ($prison_name == 'Kete Krachi') ? 'selected' : "" ?>> Kete Krachi Prisons</option>
@@ -187,7 +187,7 @@ if (isset($_POST['update'])) {
                                             <div class="form-group col-md-6">
                                                 <label for="sex">Sex</label>
                                                 <select class="custom-select mr-sm-2" id="sex" data-parsley-trigger="keyup" name='gender' required>
-                                                    <option selected>Choose...</option>
+                                                    <option value="">Choose...</option>
                                                     <option value="Male" <?= ($Sex == 'Male') ? 'selected' : "" ?>>Male</option>
                                                     <option value="Female" <?= ($Sex == 'Female') ? 'selected' : "" ?>>Female</option>
                                                 </select>
@@ -195,7 +195,7 @@ if (isset($_POST['update'])) {
                                             <div class="form-group col-md-6">
                                                 <label for="marital_status">Marital Status</label>
                                                 <select class="custom-select mr-sm-2" id="marital_status" data-parsley-trigger="keyup" name='marital_status'>
-                                                    <option selected>Choose...</option>
+                                                    <option value="">Choose...</option>
                                                     <option value="Single" <?= ($Marital_Status == "Single") ? 'selected' : "" ?>>Single</option>
                                                     <option value="Married" <?= ($Marital_Status == "Married") ? "selected" : "" ?>>Married</option>
                                                 </select>
@@ -206,7 +206,7 @@ if (isset($_POST['update'])) {
                                                 <div class="form-group">
                                                     <label class="small mb-1" for="inmateStatus">Inmate Status</label>
                                                     <select class="custom-select mr-sm-2" id="inmateStatus" data-parsley-trigger="keyup" name="inmateStatus" required>
-                                                        <option>Choose...</option>
+                                                        <option value="">Choose...</option>
                                                         <option value="Convict" <?= ($Prisoner_status == "Convict") ? "selected" : "" ?>>Convict</option>
                                                         <option value="Remand" <?= ($Prisoner_status == "Remand") ? "selected" : "" ?>> Remand</option>
 
@@ -225,7 +225,7 @@ if (isset($_POST['update'])) {
                                             <div class="form-group col-md-6">
                                                 <label for="Complexion">Complexion</label>
                                                 <select class="custom-select mr-sm-2" id="complexion" name="complexion" data-parsley-trigger="keyup" required value="<?php echo $pComplexion; ?>">
-                                                    <option selected>Choose...</option>
+                                                    <option value="">Choose...</option>
                                                     <option value="Fair" <?= ($pComplexion == 'Fair') ? "selected" : "" ?>>Fair</option>
                                                     <option value="Dark" <?= ($pComplexion == 'Dark') ? "selected" : "" ?>>Dark</option>
                                                 </select>
@@ -296,7 +296,7 @@ if (isset($_POST['update'])) {
                                         <div class="profile-img">
                                             <img src="<?php echo $imageSrc; ?>" />
                                         </div>
-                                        <button type="submit" name="update" class="btn btn-success btn-lg btn-block" required>Update Info</button>
+                                        <button type="submit" name="update" class="btn btn-success btn-lg btn-block" required>Update Record</button>
 
                                     </form>
                                 </div>
