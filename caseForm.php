@@ -30,6 +30,7 @@
                                     <h3 class="text-center font-weight-light my-4">Case Details</h3>
                                 </div>
                                 <div class="card-body">
+                                    <!-- Using parsley js to validate the form inputs and regex -->
                                     <form action='insertCase.php' id='Case_info' data-parsley-validate method='POST'>
                                         <div class="form-row">
                                             <div class="col-md-6">
@@ -113,11 +114,13 @@
             </footer>
         </div>
     </div>
+     <!-- Getting the message from the insertion of case record and creating a flash message --> 
     <?php if(isset($_GET['message'])) : ?>
         <div class='flash-data' data-flashdata="<? $_GET['message'];?>"></div>
     <?php endif; ?>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
     <script>
+    // creating a display message
     const flashdata = $('.flash-data').data('flashdata');
 
         if(flashdata) {

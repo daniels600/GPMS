@@ -317,6 +317,7 @@ $result = mysqli_query($conn, $sql);
             </footer>
         </div>
     </div>
+    <!-- Creating and showing a flash message or alert if any -->
     <?php if(isset($_GET['message'])) : ?>
         <div class='flash-data' data-flashdata="<? $_GET['message'];?>"></div>
     <?php endif; ?>
@@ -324,9 +325,6 @@ $result = mysqli_query($conn, $sql);
         <div class='flash-edit' data-flashedit="<? $_GET['edit'];?>"></div>
     <?php endif; ?>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
- 
-    <!-- <script src="assets/demo/chart-area-demo.js"></script> -->
-    <!-- <script src="assets/demo/chart-bar-demo.js"></script> -->
     <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
     <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
     <script src="assets/demo/datatables-demo.js"></script>
@@ -337,7 +335,7 @@ $result = mysqli_query($conn, $sql);
             showGraph2();
         });
 
-
+        // A function to display the graph of prisons and their population
         function showGraph1()
         {
             {
@@ -387,7 +385,7 @@ $result = mysqli_query($conn, $sql);
             }
         }
 
-
+        // a function to display a graph of the different sex and their population
         function showGraph2()
         {
             {
@@ -437,7 +435,7 @@ $result = mysqli_query($conn, $sql);
             }
         }
 
-        
+    //checking if the delete button is click and display message 
     $(".btn-danger").on('click', function(e){
             e.preventDefault();
             const href = $(this).attr('href')
@@ -459,7 +457,7 @@ $result = mysqli_query($conn, $sql);
                     
                 })
         })
-        
+        //showing message after a delete success
         const flashdata = $('.flash-data').data('flashdata');
 
         if(flashdata) {
@@ -473,6 +471,8 @@ $result = mysqli_query($conn, $sql);
                 window.location.href = 'prisoner.php';
             });
         }
+
+        //show message after a update success
         const flashedit = $('.flash-edit').data('flashedit');
 
         if(flashedit) {

@@ -6,6 +6,7 @@ require_once('config/db_conn.php');
 
 $response = array();
 
+//checking for a post inputs here
 if(isset($_POST['submit'])) {
     $vFname = mysqli_escape_string($conn, $_POST['fName']);
     $vLname = mysqli_escape_string($conn, $_POST['lName']);
@@ -17,7 +18,7 @@ if(isset($_POST['submit'])) {
     $prisonerName= mysqli_escape_string($conn, $_POST['prisonerName']);
     $prisonName = mysqli_escape_string($conn, $_POST['prison']);
 
-
+    // query to insert into a new visitor record 
     $sql = "INSERT INTO visitor( v_fname,v_lname,relationship,prisoner_name,sex,v_ph_number,time_of_visit,date_of_visit,Prison_name)
     VALUES(?,?,?,?,?,?,?,?,?)";
 

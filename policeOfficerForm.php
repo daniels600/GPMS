@@ -31,6 +31,7 @@
                                     <h3 class="text-center font-weight-light my-4">Police Officer Information</h3>
                                 </div>
                                 <div class="card-body">
+                                    <!-- Form is validated using parsley js and regex -->
                                     <form action='insertPoliceOfficer.php' method="POST" id='Officer info' data-parsley-validate>
                                         <div class="form-row">
                                             <div class="col-md-6">
@@ -85,8 +86,7 @@
                                             <label class="small mb-1" for="PoliceStation">Police Station</label>
                                             <input class="form-control py-4" id="Police_station" type="text" placeholder="Enter police station" data-parsley-required="true" data-parsley-trigger="keyup" data-parsley-pattern="^[a-zA-Z0-9 ]*$" name="stationName"/>
                                         </div>
-<!--     
-                                        <div class="form-group mt-4 mb-0"><a class="btn btn-primary btn-block" href="login.html">Save Info</a></div> -->
+
                                         <button type="submit" name="submit" class="btn btn-primary btn-lg btn-block">Save Record</button>
                                     </form>
                                 </div>
@@ -111,6 +111,7 @@
             </footer>
         </div>
     </div>
+    <!-- Checking for the message in the url to show an alert to admin -->
     <?php if(isset($_GET['message'])) : ?>
         <div class='flash-data' data-flashdata="<? $_GET['message'];?>"></div>
     <?php endif; ?>

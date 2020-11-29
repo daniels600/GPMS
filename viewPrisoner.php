@@ -14,6 +14,7 @@ if (isset($_GET['id'])) {
   $result = mysqli_query($conn, $sql1);
   $record =  mysqli_query($conn, $sql2);
 
+  //Checking if query is successful and getting its fields
   if (isset($result)) {
     $n = mysqli_fetch_assoc($result);
     $fname = $n['Prisoner_fname'];
@@ -42,6 +43,9 @@ if (isset($_GET['id'])) {
     $policeID = $n['P_Officer_Id'];
   }
 }
+
+
+//Checking if query is successful and getting its fields
 if (isset($record)) {
   $row = mysqli_fetch_assoc($record);
   $Latest_Possible_Date = $row['Latest_Possible_Date'];
@@ -51,6 +55,8 @@ if (isset($record)) {
 $sql3 = "SELECT * from Cases where Case_id = '$caseId'";
 $case_record =  mysqli_query($conn, $sql3);
 
+
+//Checking if query is successful and getting its fields
 if (mysqli_num_rows($case_record) > 0) {
   $m = mysqli_fetch_assoc($case_record);
   $magFname = $m['Magistrate_fname'];
@@ -68,6 +74,8 @@ if (mysqli_num_rows($case_record) > 0) {
 $sql4 = "SELECT * from Police_Officer where P_Officer_Id = '$policeID'";
 $officerRecords = mysqli_query($conn,$sql4);
 
+
+//Checking if query is successful and getting its fields
 if(mysqli_num_rows($officerRecords) > 0){
   $x = mysqli_fetch_assoc($officerRecords);
   $officerFname = $x['P_fname'];
@@ -149,7 +157,7 @@ if(mysqli_num_rows($officerRecords) > 0){
               <label><strong>Gender</strong></label>
             </div>
             <div class="col-md-6">
-              <p><?php if($Sex== 'M'){echo 'Male';}else{echo 'Female';} ?></p>
+              <p><?php if($Sex== 'Male'){echo 'Male';}else{echo 'Female';} ?></p>
             </div>
           </div>
           <div class="row">

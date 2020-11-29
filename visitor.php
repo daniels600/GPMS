@@ -253,6 +253,7 @@ $result = mysqli_query($conn, $sql);
             </footer>
         </div>
     </div>
+    <!-- Creating and showing a flash message or alert if any -->
     <?php if(isset($_GET['message'])) : ?>
         <div class='flash-data' data-flashdata="<? $_GET['message'];?>"></div>
     <?php endif; ?>
@@ -261,14 +262,12 @@ $result = mysqli_query($conn, $sql);
     <?php endif; ?>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
-    <script src="assets/demo/chart-area-demo.js"></script>
-    <script src="assets/demo/chart-bar-demo.js"></script>
     <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
     <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
     <script src="assets/demo/datatables-demo.js"></script>
 
     <script>
-
+        //checking if the delete button is clicked
         $(".btn-danger").on('click', function(e){
             e.preventDefault();
             const href = $(this).attr('href')
@@ -290,6 +289,8 @@ $result = mysqli_query($conn, $sql);
                     
                 })
         })
+
+        //displaying a message if the record is deleted successfully
         const flashdata = $('.flash-data').data('flashdata');
 
         if(flashdata) {
@@ -303,6 +304,8 @@ $result = mysqli_query($conn, $sql);
                 window.location.href = 'visitor.php';
             });
         }
+
+        //displaying a message if update was successful
         const flashedit = $('.flash-edit').data('flashedit');
 
         if(flashedit) {

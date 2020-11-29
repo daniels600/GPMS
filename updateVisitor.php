@@ -95,6 +95,7 @@ if (isset($_POST['update'])) {
                                 }
 
                                 ?>
+                                  <!-- Using parsley js to validate the form inputs and regex -->
                                     <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST" id='visitor_info' data-parsley-validate>
                                         <div class="form-row">
                                             <div class="col-md-6">

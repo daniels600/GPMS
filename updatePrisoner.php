@@ -133,6 +133,7 @@ if (isset($_POST['update'])) {
                                 }
 
                                 ?>
+                                  <!-- Using parsley js to validate the form inputs and regex -->
                                     <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method='POST' id='Prisoner_info' enctype="multipart/form-data" data-parsley-validate>
                                         <div class="form-row">
                                             <div class="col-md-6">
@@ -283,8 +284,7 @@ if (isset($_POST['update'])) {
                                         <div class="form-group">
                                             <input type="hidden" name="prisoner_id" value="<?php echo $prisonerId; ?>">
                                         </div>
-                                        <!--     
-                                        <div class="form-group mt-4 mb-0"><a class="btn btn-primary btn-block" href="login.html">Save Info</a></div> -->
+                                        <!-- Checking for an error with image -->
                                         <label>Inmate Image</label>
                                         <?php if (isset($_GET['error'])) {
                                             if ($_GET['error'] == 'wrongImage') {
@@ -322,7 +322,7 @@ if (isset($_POST['update'])) {
             </footer>
         </div>
     </div>
-
+    <!-- Creating and showing a flash message or alert if any -->
     <?php if (isset($_GET['message'])) : ?>
         <div class='flash-data' data-flashdata="<? $_GET['message'];?>"></div>
     <?php endif; ?>
@@ -331,6 +331,7 @@ if (isset($_POST['update'])) {
     <?php endif; ?>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
     <script>
+        //using sweetAlert to display alert 
         const flashdata = $('.flash-data').data('flashdata');
 
         if (flashdata) {

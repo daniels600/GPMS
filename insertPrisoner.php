@@ -1,13 +1,17 @@
 <?php 
+//Using sessions 
 session_start();
 
+// checking the connection to the database
 require_once('config/db_conn.php');
 
+//an array to get the messages 
 $response = array();
 
 if(isset($_POST['submit'])) {
-    $tm = md5(time());
+    $tm = md5(time()); //Hashing to make an image unique
 
+    //Getting all the post or submitted input values
     $prisonerFname = mysqli_escape_string($conn, $_POST['pFname']);
     $prisonerLname = mysqli_escape_string($conn, $_POST['pLname']);
     $nationality = mysqli_escape_string($conn, $_POST['nationality']);
@@ -53,34 +57,38 @@ if(isset($_POST['submit'])) {
         }
     } 
 
-
+    //A query to insert a new prisoner
     $sql = "INSERT INTO Prisoner(Cell_block, P_Officer_Id,Prison_name, Prisoner_fname,Prisoner_lname,DOB,P_complexion,Marital_Status,Sex,Height_feets, Weight_kg,Nationality,Prisoner_tel,Next_of_Kin_fname,Next_of_Kin_lname,Next_of_Kin_Rel,Eye_color,Prisoner_status,address_street,address_city, address_region, address_postal_code, image)
     VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 
+    //preparing the query statement 
     $stmt = $conn->prepare($sql);
     $stmt->bind_param('sdsssssssddssssssssssss', $cellBlock, $policeId, $prison,$prisonerFname,$prisonerLname,$dob,$complexion,$marital_status,$sex,$height,$weight,$nationality,$telephone,$nextKinF, $nextKinL,$kinRelation, $eyeColor,$inmateStatus,$streetAddr,$city,$state, $PostalCode,$dst1);
 
 
+    //checking the execution of the query statement
     if($stmt->execute()){
         $prisonerId = $conn->insert_id;
         $_SESSION['prisonerId'] = $prisonerId;
         $response['message'] = "Success";
         $caseId = $_SESSION['caseId'];
 
+        //query to insert into the prisoner_case table
         $query = "INSERT INTO Prisoner_case(Case_id,Prisoner_id,Latest_Possible_Date)
         VALUES('$caseId', '$prisonerId','$release_date')";
 
         if ($result = mysqli_query($conn, $query)){
-            echo "inserted into prisoner case";
-
+            //unset or removing the session variables from the policeOfficer and case forms
             unset($_SESSION['policeOfficeId']);
             unset($_SESSION['caseId']);
         }
 
         header('Location: prisonerForm.php?message=success');
 
+    //If the statement execution fails
     } else {
         $response['message'] = "Failed";
+        header('Location: prisonerForm.php?error=failed&');
     }
 
     

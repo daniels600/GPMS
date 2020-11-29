@@ -1,10 +1,12 @@
 <?php
 
-
+//checking for a reset in the url to this page
 if(isset($_GET['reset'])){
     $msg = "Password reset Successfully";
 }
 
+
+//checking for an error in the url to this page
 if(isset($_GET['error'])){
     $err_msg = "Password reset unsuccessful!";
 }
@@ -17,7 +19,7 @@ if(isset($_GET['error'])){
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Reset Password</title>
+        <title>GPMS</title>
         <link href="css/styles.css" rel="stylesheet" />
         <link href="css/parsley.css" rel="stylesheet" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" crossorigin="anonymous"></script>
@@ -36,6 +38,7 @@ if(isset($_GET['error'])){
                                     <div class="card-header"><h3 class="text-center font-weight-light my-4">Password Reset</h3></div>
                                     <div class="card-body">
                                     <?php 
+                                    // showing the error message
                                     if(isset($err_msg)){
                                         echo '<div class="alert alert-danger">' .
                                         '<li style="text-align:center">'.$err_msg.'</li>'
@@ -43,6 +46,7 @@ if(isset($_GET['error'])){
                                     }
                                     ?>
                                     <?php
+                                        //showing the success message if any
                                         if (isset($msg)) {
                                             echo '<div class="alert alert-success">' .
                                             '<li style="text-align:center">'.$msg.'</li>'
@@ -52,6 +56,7 @@ if(isset($_GET['error'])){
 
                                         ?>
                                         <div class="small mb-3 text-muted">Enter your email address and new password.</div>
+                                        <!-- form validation using parsley js -->
                                         <form action='reset_password.php' method="POST" data-parsley-validate>
                                             <div class="form-group">
                                                 <label class="small mb-1" for="inputEmailAddress">Email</label>

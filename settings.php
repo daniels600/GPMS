@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Ghana Prison Management System</title>
+    <title>GPMS</title>
     <link rel="icon" href="images/imageedit_28_3939584200.png" type="image/png">
     <link href="css/styles.css" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" crossorigin="anonymous"></script>
@@ -66,6 +66,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
     <script> 
         $(document).ready(function(){
+            //checking if there is a click 
             $('#light-theme').click(function(){
                 if($(this).prop("checked") == true){
                     console.log("lIght check was done");
@@ -74,7 +75,7 @@
                     
                 }
             });
-
+            //checking if there is a click 
             $('#dark-theme').click(function(){
                 if($(this).prop("checked") == true){
                     window.location.href= './Dashboard.php';

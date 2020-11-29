@@ -2,17 +2,18 @@
 
 require_once('config/db_conn.php');
 
+//checking for an id in the url to this page
 if(isset($_GET['id'])){
     $employeeId = $_GET['id'];
 
-
-
+    //query the record of an employee with this id
     $sql = "SELECT * FROM Employees WHERE Employee_ID = '$employeeId'";
 
     $result = mysqli_query($conn, $sql);
                                         
 
     if (isset($result)) {
+        //creating an associative array of the records in employees
         $n = mysqli_fetch_assoc($result);
         $empFname = $n['Employee_fname'];
         $empLname = $n['Employee_lname'];
@@ -69,6 +70,7 @@ if(isset($_GET['id'])){
                                     <h3 class="text-center font-weight-light my-4">Employee's Information</h3>
                                 </div>
                                 <div class="card-body">
+                                     <!-- Using parsley js to validate the form inputs -->
                                     <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST" id='Employee_info' data-parsley-validate>
                                         <div class="form-row">
                                             <div class="col-md-6">

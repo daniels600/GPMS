@@ -62,7 +62,7 @@ if(isset($_POST['submit']))  {
 
 }
 
-//Logout Admin
+//Logout Admin and destroy all sessions 
 if(isset($_GET['logout'])){
     session_destroy();
 

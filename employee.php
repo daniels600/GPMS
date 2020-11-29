@@ -205,6 +205,7 @@ $result = mysqli_query($conn, $sql);
             </footer>
         </div>
     </div>
+      <!-- Creating and showing a flash message or alert if any -->
     <?php if(isset($_GET['message'])) : ?>
         <div class='flash-data' data-flashdata="<? $_GET['message'];?>"></div>
     <?php endif; ?>
@@ -227,7 +228,7 @@ $result = mysqli_query($conn, $sql);
             showGraph1();
         });
 
-
+        // A function to display the graph of different employee gender and their numbers 
         function showGraph1()
         {
             {
@@ -277,6 +278,7 @@ $result = mysqli_query($conn, $sql);
             }
         }
 
+        // checking if the delete button is clicked and display a message 
     $(".btn-danger").on('click', function(e){
             e.preventDefault();
             const href = $(this).attr('href')
@@ -298,7 +300,7 @@ $result = mysqli_query($conn, $sql);
                     
                 })
         })
-        
+        // creating a display message on delete success
         const flashdata = $('.flash-data').data('flashdata');
 
         if(flashdata) {
@@ -312,6 +314,7 @@ $result = mysqli_query($conn, $sql);
                 window.location.href = 'employee.php';
             });
         }
+        // creating a display message on update success
         const flashedit = $('.flash-edit').data('flashedit');
 
         if(flashedit) {
@@ -322,7 +325,7 @@ $result = mysqli_query($conn, $sql);
                 text: 'Employee record updated!',
                     
             }).then(function () {
-                window.location.href = 'employee.php';
+                window.location.href = 'employee.php';  // redirecting admin to employee page
             });
         }
     </script>

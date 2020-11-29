@@ -41,6 +41,7 @@ if(isset($_GET['id'])){
 
 }
 
+//checking if the is a post update
 if (isset($_POST['update'])) {
     $id = $_POST['employee_id'];
 
@@ -64,9 +65,10 @@ if (isset($_POST['update'])) {
     $postcode =$_POST['postcode'];
     $DOC = $_POST['DOC'];
 
+    //executing the query to update the employee record
     if (mysqli_query($conn, "UPDATE Employees SET Employee_fname='$empFname', Employee_lname='$empLname', Prison_name='$prison', Dept_name='$Dept', nationality='$nationality', work_commence_date='$DOC', email='$email', emp_tel='$telephone', Job='$role', sex='$sex', Marital_Status='$marital_status', level_of_education='$edu', Salary='$salary', DOB='$dob',SSN='$ssn',address_street='$streetAddress ',address_city='$city', address_region='$state',address_postal_code='$postcode' WHERE Employee_ID='$id'")){
 
-
+        //redirecting if there is a success
         header('location: employee.php?edit=success');
         exit();
     }
@@ -82,7 +84,7 @@ if (isset($_POST['update'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Page Title - SB Admin</title>
+    <title>GPMS</title>
     <link rel="icon" href="images/imageedit_28_3939584200.png" type="image/png">
     <link href="css/styles.css" rel="stylesheet" />
     <link href="css/parsley.css" rel="stylesheet" />
@@ -129,6 +131,7 @@ if (isset($_POST['update'])) {
                                                 <label class="small mb-1" for="prison">Prison</label>
                                                 <select  class="custom-select mr-sm-2" id="prison" name="prison" data-parsley-required="true" >
                                                     <option value="">Choose...</option>
+                                                    <!-- checking for the option selected -->
                                                     <option value="Nsawam Medium Security" <?= ($prison == 'Nsawam Medium Security')? "selected" : "" ?> > Nsawam Medium Security Prisons</option>
                                                     <option value="Ankaful" <?= ($prison == 'Ankaful')? "selected" : "" ?> >Ankaful Prison</option>
                                                     <option value="Kete Krachi" <?= ($prison == 'Kete Krachi')? "selected" : "" ?> > Kete Krachi Prisons</option>
@@ -142,6 +145,7 @@ if (isset($_POST['update'])) {
                                                 <label class="small mb-1" for="dept_name">Department name</label>
                                                 <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" id="dept_id" name='dept_name' data-parsley-trigger="keyup" required>
                                                     <option value="">Choose...</option>
+                                                     <!-- checking for the option selected -->
                                                     <option value="Finance and Administration" <?= ($Dept == 'Finance and Administration')? "selected" : "" ?>>Finance and Administration</option>
                                                     <option value="Human Resource" <?= ($Dept == 'Human Resource')? "selected" : "" ?>>Human Resource</option>
                                                     <option value="Agricultural" <?= ($Dept == 'Agricultural')? "selected" : "" ?>>Agricultural</option>
@@ -165,6 +169,7 @@ if (isset($_POST['update'])) {
                                                     <label class="small mb-1" for="edu">Level of education</label>
                                                     <select class="custom-select mr-sm-2" id="edu" name="edu" data-parsley-trigger="keyup" required>
                                                         <option value="" selected>Choose...</option>
+                                                         <!-- checking for the option selected -->
                                                         <option value="Primary School" <?= ($edu == 'Primary School')? "selected" : "" ?>>Primary School</option>
                                                         <option value="Junior High School" <?= ($edu == 'Junior High School')? "selected" : "" ?>>Junior High School</option>
                                                         <option value="Senior Secondary School" <?= ($edu == 'Senior Secondary School')? "selected" : "" ?>>Senior Secondary School</option>
@@ -183,6 +188,7 @@ if (isset($_POST['update'])) {
                                                 <label for="sex">Sex</label>
                                                 <select class="custom-select mr-sm-2" id="sex" name="sex"  data-parsley-trigger="keyup" required>
                                                     <option value="">Choose...</option>
+                                                     <!-- checking for the option selected -->
                                                     <option value="M" <?= ($sex == 'Male')? "selected" : "" ?>>Male</option>
                                                     <option value="F" <?= ($sex == 'Female')? "selected" : "" ?>>Female</option>
                                                 </select>
@@ -191,6 +197,7 @@ if (isset($_POST['update'])) {
                                                 <label for="marital_status">Marital Status</label>
                                                 <select class="custom-select mr-sm-2" name="marital_status" data-parsley-trigger="keyup" required>
                                                     <option value="">Choose...</option>
+                                                     <!-- checking for the option selected -->
                                                     <option value="Single" <?= ($marital_status == 'Single')? "selected" : "" ?>>Single</option>
                                                     <option value="Married" <?= ($marital_status == 'Married')? "selected" : "" ?>>Married</option>
                                                 </select>
@@ -271,6 +278,7 @@ if (isset($_POST['update'])) {
             </footer>
         </div>
     </div>
+    <!-- checking for an edit in the url which means a success and alerting to the user -->
     <?php if(isset($_GET['edit'])) : ?>
         <div class='flash-data' data-flashdata="<? $_GET['edit'];?>"></div>
     <?php endif; ?>

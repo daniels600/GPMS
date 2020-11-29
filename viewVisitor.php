@@ -104,8 +104,8 @@ if (isset($_GET['id'])) {
                                                     <label for="sex">Sex</label>
                                                     <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="sex"  data-parsley-trigger="keyup" required readonly>
                                                         <option selected>Choose...</option>
-                                                        <option value="M" <?= ($sex == 'M')? "selected" : "" ?>>Male</option>
-                                                        <option value="F" <?= ($sex == 'F')? "selected" : "" ?>>Female</option>
+                                                        <option value="Male" <?= ($sex == 'Male')? "selected" : "" ?>>Male</option>
+                                                        <option value="Female" <?= ($sex == 'Female')? "selected" : "" ?>>Female</option>
                                                     </select>
                                             </div>
                                         </div>
@@ -121,13 +121,13 @@ if (isset($_GET['id'])) {
                                             <label class="small mb-1" for="prison">Prison</label>
                                             <select class="form-control" id="prison" name="prison" data-parsley-required="true" readonly>
                                                 <option>Choose...</option>
-                                                <option value="Nsawam Medium Security Prisons" <?= ($prison_name == 'Nsawam Medium Security Prisons') ? 'selected' : "" ?>> Nsawam Medium Security Prisons</option>
-                                                <option value="Ankaful Prison" <?= ($prison_name == 'Ankaful Prison') ? 'selected' : "" ?>>Ankaful Prison</option>
-                                                <option value="Kete Krachi Prisons" <?= ($prison_name == 'Kete Krachi Prisons') ? 'selected' : "" ?>> Kete Krachi Prisons</option>
-                                                <option value="Akuse Prison" <?= ($prison_name == 'Akuse Prison') ? 'selected' : "" ?>>Akuse Prison</option>
-                                                <option value="Tamale Prison" <?= ($prison_name == 'Tamale Prison') ? 'selected' : "" ?>>Tamale Prison</option>
-                                                <option value="Sekondi Female Prison" <?= ($prison_name == 'Sekondi Female Prison') ? 'selected' : "" ?>>Sekondi Female Prison</option>
-                                                <option value="Borstal Institute for Juveniles" <?= ($prison_name == 'Borstal Institute for Juveniles') ? 'selected' : "" ?>>Borstal Institute for Juveniles</option>
+                                                <option value="Nsawam Medium Security" <?= ($prison_name == 'Nsawam Medium Security') ? 'selected' : "" ?>> Nsawam Medium Security Prisons</option>
+                                                <option value="Ankaful" <?= ($prison_name == 'Ankaful') ? 'selected' : "" ?>>Ankaful Prison</option>
+                                                <option value="Kete Krachi" <?= ($prison_name == 'Kete Krachi') ? 'selected' : "" ?>> Kete Krachi Prisons</option>
+                                                <option value="Akuse" <?= ($prison_name == 'Akuse') ? 'selected' : "" ?>>Akuse Prison</option>
+                                                <option value="Tamale" <?= ($prison_name == 'Tamale') ? 'selected' : "" ?>>Tamale Prison</option>
+                                                <option value="Sekondi Female" <?= ($prison_name == 'Sekondi Female') ? 'selected' : "" ?>>Sekondi Female Prison</option>
+                                                <option value="Borstal Juveniles" <?= ($prison_name == 'Borstal Juveniles') ? 'selected' : "" ?>>Borstal Institute for Juveniles</option>
                                             </select>
                                         </div>
                                     </form>

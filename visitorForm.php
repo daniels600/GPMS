@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Page Title - SB Admin</title>
+    <title>Visitor Page</title>
     <link rel="icon" href="images/imageedit_28_3939584200.png" type="image/png">
     <link href="css/styles.css" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" crossorigin="anonymous"></script>
@@ -29,6 +29,7 @@
                                     <h3 class="text-center font-weight-light my-4">Visitor Details</h3>
                                 </div>
                                 <div class="card-body">
+                                     <!-- Using parsley js to validate the form inputs -->
                                     <form action='insertVisitor.php' method="POST" id='visitor_info' data-parsley-validate>
                                         <div class="form-row">
                                             <div class="col-md-6">

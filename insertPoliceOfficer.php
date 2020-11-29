@@ -4,6 +4,7 @@ session_start();
 
 require_once('config/db_conn.php');
 
+// an array to keep the messages
 $response = array();
 
 if(isset($_POST['submit'])) {
@@ -15,13 +16,15 @@ if(isset($_POST['submit'])) {
     $ranks = mysqli_escape_string($conn, $_POST['ranks']);
     $stationName = mysqli_escape_string($conn, $_POST['stationName']);
 
-
+    // A query to insert a new policeOfficer record 
     $sql = "INSERT INTO Police_Officer(Service_ID, P_fname, P_lname,Ranks, Officer_contact,Police_Station,Station_Tel)
     VALUES(?,?,?,?,?,?,?)";
 
     $stmt = $conn->prepare($sql);
     $stmt->bind_param('sssssss',$serviceId,$officerFname,$officerLname,$ranks,$officerContact,$stationName,$stationContact);
 
+
+    // checking if query was a success
     if($stmt->execute()){
         $response['message'] = "Success";
 

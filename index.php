@@ -3,6 +3,7 @@
 
 <?php
 
+//Checking for a login in the url 
 if(isset($_GET['login'])){
     if($_GET['login'] = 'success'){
         $msg = "Login Successful";
@@ -40,12 +41,14 @@ if(isset($_GET['login'])){
                                 <div class="card-header">
                                     <h3 class="text-center font-weight-light my-4">Login</h3>
                                 </div>
+                                <!-- Showing a message if any -->
                                 <?php if(count($response) > 0): ?>
                                     <div class= 'alert alert-danger'>
                                         <?php echo '<li style="text-align:center">'. $response['message'] .'</li>'?>
                                     </div>
                                 <?php endif; ?>
                                 <?php
+                                //Showing a message if any and redirect to the Dashboard after 1.5 secs
                                 if (isset($msg)) {
                                     echo '<div class="alert alert-success">' .
                                     '<li style="text-align:center">'.$msg.'</li>'
@@ -57,6 +60,7 @@ if(isset($_GET['login'])){
                                
                                
                                 <div class="card-body">
+                                    <!-- Form validation with parsley js and regex -->
                                     <form action='index.php' method='POST' class='login-form' data-parsley-validate>
                                         <div class="form-group">
                                             <label class="small mb-1" for="inputEmailAddress">Email</label>

@@ -28,7 +28,7 @@ if(isset($_POST['submit'])) {
     $postcode = mysqli_escape_string($conn, $_POST['postcode']);
     $DOC = mysqli_escape_string($conn, $_POST['DOC']);
     
-
+    // a query to insert a new employee record
     $sql = "INSERT INTO Employees(Employee_fname,Employee_lname,Prison_name, Dept_name,nationality,work_commence_date,email,emp_tel,Job, sex,Marital_Status,level_of_education,Salary,DOB,SSN,address_street,address_city,address_region,address_postal_code)
     VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 

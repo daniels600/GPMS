@@ -29,6 +29,7 @@
                                     <h3 class="text-center font-weight-light my-4">Inmate Information</h3>
                                 </div>
                                 <div class="card-body">
+                                    <!-- Using parsley js to validate the form inputs and regex -->
                                     <form action='insertPrisoner.php' method='POST' id='Prisoner_info' enctype="multipart/form-data" data-parsley-validate>
                                         <div class="form-row">
                                             <div class="col-md-6">
@@ -127,7 +128,7 @@
                                             </div>
                                             <div class="form-group col-md-6">
                                                 <label for="telephone">Telephone</label>
-                                                <input type="tel" class="form-control" id="telephone" name="telephone" placeholder="Telephone" data-parsley-required="true" data-parsley-pattern="^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$" />
+                                                <input type="tel" class="form-control" id="telephone" name="telephone" placeholder="Telephone" data-parsley-required="true" data-parsley-pattern="^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$" data-parsley-trigger="keyup" />
                                             </div>
                                         </div>
                                         <div class="form-group">
@@ -143,48 +144,44 @@
                                         <div class="form-row">
                                             <div class="col-md-6 mb-3">
                                                 <label for="streetAddr">Street Address</label>
-                                                <input type="text" class="form-control" id="streetAddr" placeholder="Street Address" data-parsley-required="true" data-parsley-pattern="^[a-zA-Z0-9.,\- ]*$" name="streetAddr">
+                                                <input type="text" class="form-control" id="streetAddr" placeholder="Street Address" data-parsley-required="true" data-parsley-pattern="[ A-Za-z0-9 _.,\/+-]*$" name="streetAddr" data-parsley-trigger="keyup" >
                                             </div>
                                             <div class="col-md-6 mb-3">
                                                 <label for="city">City</label>
-                                                <input type="text" class="form-control" id="city" name="city" placeholder="City" data-parsley-required="true" data-parsley-pattern="^[a-zA-Z0-9.,- ]*$">
+                                                <input type="text" class="form-control" id="city" name="city" placeholder="City" data-parsley-required="true" data-parsley-pattern="^[ A-Za-z0-9 _.,\/+-]*$" data-parsley-trigger="keyup" >
                                             </div>
 
                                             <div class="col-md-6 mb-3">
                                                 <label for="state">Region</label>
-                                                <input type="text" class="form-control" id="state" placeholder="State" name="state" data-parsley-pattern="^[a-zA-Z ]*$" required>
+                                                <input type="text" class="form-control" id="state" placeholder="State" name="state" data-parsley-pattern="^[ A-Za-z0-9 -]*$" data-parsley-trigger="keyup" required>
 
                                             </div>
                                             <div class="col-md-6 mb-3">
                                                 <label for="PostalCode">PostalCode</label>
-                                                <input type="text" class="form-control" id="PostalCode" placeholder="PostalCode" data-parsley-pattern="^[a-zA-Z0-9., \/ ]*$" name="PostalCode" required>
+                                                <input type="text" class="form-control" id="PostalCode" placeholder="PostalCode" name="PostalCode" data-parsley-pattern="^[ A-Za-z0-9 _.,\/+-]*$" data-parsley-trigger="keyup" required>
                                             </div>
                                         </div>
                                         <div class="form-row">
                                             <div class="col">
                                                 <label class="small mb-1" for="nextKin">Next of Kin</label>
-                                                <input type="text" class="form-control" placeholder="Next of Kin First name" name="nextKinF" data-parsley-pattern="^[a-zA-Z]*$" data-parsley-required="true">
+                                                <input type="text" class="form-control" placeholder="Next of Kin First name" name="nextKinF" data-parsley-pattern="^[a-zA-Z ]*$" data-parsley-required="true">
                                             </div>
                                             <div class="col">
                                                 <label class="small mb-1" for="nextKin">Next of Kin</label>
-                                                <input type="text" class="form-control" placeholder="Next of Kin Last name" name="nextKinL" data-parsley-pattern="^[a-zA-Z]*$" data-parsley-required="true">
+                                                <input type="text" class="form-control" placeholder="Next of Kin Last name" name="nextKinL" data-parsley-pattern="^[a-zA-Z ]*$" data-parsley-required="true">
                                             </div>
                                         </div>
                                         <br />
                                         <div class="form-group">
                                             <label class="small mb-1" for="kinRelation">Next of Kin Relationship</label>
-                                            <input class="form-control py-4" name="kinRelation" type="text" placeholder="Enter Relation" data-parsley-pattern="^[a-zA-Z]*$" data-parsley-required="true" />
+                                            <input class="form-control py-4" name="kinRelation" type="text" placeholder="Enter Relation" data-parsley-pattern="^[a-zA-Z ]*$" data-parsley-required="true" />
                                         </div>
                                     
-                                        <!-- <div class="form-group">
-                                            <label for="image">Upload Inmate's Image</label>
-                                            <input type="file" name="image" class="form-control-file" id="image" data-parsley-required="true" >
-                                        </div> -->
                                         <div class="form-group">
                                             <p><input type="file" accept="image/*" name="image" id="file" onchange="loadFile(event)" style="display: none;"></p>
                                             <p><label class="btn btn-primary"for="file" style="cursor: pointer;">Upload Image</label></p>
                                             <p><img id="output" width="200" name="image"/></p>
-                                            <!-- <input type="file" name="image" class="form-control-file" id="image" data-parsley-required="true" value="<?php echo $imageSrc; ?>"> -->
+                                           
                                         </div>
                                         <?php if(isset($_GET['error'])){if($_GET['error'] == 'wrongImage') {echo "Upload a *jpeg  *gif *png *jpg";}}?>
                                         <br />
@@ -213,11 +210,13 @@
             </footer>
         </div>
     </div>
+     <!-- Getting the message from the insertion of prisoner record and creating a flash message -->
     <?php if(isset($_GET['message'])) : ?>
         <div class='flash-data' data-flashdata="<? $_GET['message'];?>"></div>
     <?php endif; ?>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
     <script>
+    // Using sweetalert to show an alert
     const flashdata = $('.flash-data').data('flashdata');
 
         if(flashdata) {
@@ -234,6 +233,7 @@
             });
         }
 
+        //Preview the inserted image 
         var loadFile = function(event) {
             var image = document.getElementById('output');
             image.src = URL.createObjectURL(event.target.files[0]);

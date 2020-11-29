@@ -17,6 +17,7 @@ if(isset($_POST['submit'])) {
     $dateCrime = mysqli_escape_string($conn, $_POST['crimeDate']);
     $sentence = mysqli_escape_string($conn, $_POST['sentenceLength']);
 
+    //  A query to insert a new case 
     $sql = "INSERT into cases(case_start_date,case_end_date,crime_committed,Category_of_Offence,Crime_time,Crime_date,
     sentence_length_Years,Court_of_commital,Magistrate_fname,Magistrate_lname) 
     VALUES(?,?,?,?,?,?,?,?,?,?)";
@@ -31,6 +32,7 @@ if(isset($_POST['submit'])) {
         $_SESSION['caseId'] = $caseId;
         $response['message'] = "Success";
 
+        // redirect if the case record was inserted successfully
         header('Location: caseForm.php?message=success');
 
     } else {
