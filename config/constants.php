@@ -8,6 +8,4 @@ define("DB_NAME","EKD02792022");
 
 
 
-
-
 ?>

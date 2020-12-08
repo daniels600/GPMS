@@ -3,7 +3,11 @@
 session_start();
  
 // Include config file
-require "config/db_conn.php";
+
+include "config/db_conn.php";
+
+//creating an instance of db_connection 
+$db = new DB_connection();
 
 
 // Validating of Login of Admin
@@ -20,11 +24,12 @@ if(isset($_POST['submit']))  {
     // Prepare a select statement
     $sql = "SELECT admin_id, email, password FROM ADMIN_LOGIN WHERE email ='$admin_email'";
         
-    $result =  mysqli_query($conn, $sql);
+    //Executing the query 
+    $result =  mysqli_query($db->connect(),$sql);
 
     if($result === false){
-        
-        die(mysqli_error($conn));;
+        //end connection
+        die(mysqli_error($db->connect()));
     } 
     else{
         //Checking if the was a result from the query
@@ -32,7 +37,8 @@ if(isset($_POST['submit']))  {
             $response['message'] = "Invalid Credentials";
         } else {
             $row = mysqli_fetch_array($result);
-        
+            
+            //creating variables for the fields from the DB
             $id =  $row[0];
             $password = $row[2];
 
@@ -44,21 +50,18 @@ if(isset($_POST['submit']))  {
                 $_SESSION['admin_id'] = $row[0];
                 $_SESSION['admin_email'] = $row[1];
 
+                //redirect to login with an addition to the url
                 header('Location: index.php?login=success');
                
 
             } else {
-                
+                //error message
                 $response['message'] = "Invalid Credentials";
             }
         }
         
     } 
        
-    
-    // Close connection
-    $conn->close();
-
 
 }
 

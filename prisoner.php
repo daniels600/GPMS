@@ -51,8 +51,9 @@ $result = mysqli_query($conn, $sql);
     <meta name="description" content="" />
     <meta name="author" content="" />
     <title>GPMS</title>
-    <link rel="icon" href="images/imageedit_28_3939584200.png" type="image/png">
-    <link href="css/styles.css" rel="stylesheet" />
+    <link rel="icon" href="
+    ../images/imageedit_28_3939584200.png" type="image/png">
+    <link href="../css/styles.css" rel="stylesheet" />
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
     <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
@@ -62,7 +63,7 @@ $result = mysqli_query($conn, $sql);
 
 <body class="sb-nav-fixed">
     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
-        <img src="images/GPMS_logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
+        <img src="assets/images/GPMS_logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
         <a class="navbar-brand" href="index.html">GPMS</a>
         <button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button>
         <!-- Navbar Search-->
